@@ -15,7 +15,8 @@ session_start();
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
   <!-- Lightbox2 CSS -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet" />
-
+<link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+ 
 <!-- Bootstrap CSS (if not already included) -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
 
@@ -94,6 +95,11 @@ session_start();
     html {
   scroll-behavior: smooth;
 }
+.card-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
   </style>
 </head>
 <body>
@@ -191,7 +197,35 @@ session_start();
 </div>
 
  <!-- Video Modal -->
- 
+ <!-- PDF Documents Section -->
+<div class="container mt-5">
+  <h4 class="text-center mb-4">📄 Legal & Technical Documents</h4>   
+  <div class="row justify-content-center"> 
+    <div class="col-md-5 mb-3">
+      <div class="card shadow-sm">
+        <div class="card-body text-center">
+          <h5 class="card-title">Legal & Approvals</h5>
+          <a href="Legal&approvlas.pdf" target="_blank" class="btn btn-outline-success">
+            📥 View / Download PDF
+          </a>
+        </div>
+      </div>
+    </div>
+
+      <div class="col-md-5 mb-3">
+      <div class="card shadow-sm">
+        <div class="card-body text-center">
+          <h5 class="card-title">Soil Testing</h5>
+          <a href="Soil_Testing.pdf" target="_blank" class="btn btn-outline-success">
+            📥 View / Download PDF
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
  
 <div class="container mt-5">
   <h2 class="mb-1 text-center">Intro Video</h2>
@@ -210,6 +244,7 @@ session_start();
   </div>
 
 </div>
+ 
 
 
 <!-- Footer Section -->
@@ -255,5 +290,12 @@ session_start();
 <script src="https://cdn.jsdelivr.net/npm/lightbox2@2.11.4/dist/js/lightbox-plus-jquery.min.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script type="module">
+	import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+
+	createChat({
+		webhookUrl: 'https://devaraju.app.n8n.cloud/webhook/81beeb70-486c-4d87-9cc9-c4bdd6da3a65/chat'
+	});
+</script>
 </body>
 </html>
